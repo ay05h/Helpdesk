@@ -4,6 +4,7 @@ import { Group, logoutLogo } from "../assets/assets";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../store/authSlice";
+import { useSelector } from "react-redux";
 const DashboardLayout = () => {
   const role = useSelector((state) => state.auth.role);
   const dispatch = useDispatch();
