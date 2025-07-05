@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../store/authSlice";
 const DashboardLayout = () => {
+  const role = useSelector((state) => state.auth.role);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
@@ -41,16 +42,18 @@ const DashboardLayout = () => {
           >
             {({ isActive }) => `${isActive ? "> " : ""}📊 Dashboard`}
           </NavLink>
-          <NavLink
-            to="/new-ticket"
-            className={({ isActive }) =>
-              `block hover:text-blue-500 ${
-                isActive ? "text-blue-500 font-semibold" : ""
-              }`
-            }
-          >
-            {({ isActive }) => `${isActive ? "> " : ""}🎫 New Ticket`}
-          </NavLink>
+          {role === "user" && (
+            <NavLink
+              to="/new-ticket"
+              className={({ isActive }) =>
+                `block hover:text-blue-500 ${
+                  isActive ? "text-blue-500 font-semibold" : ""
+                }`
+              }
+            >
+              {({ isActive }) => `${isActive ? "> " : ""}🎫 New Ticket`}
+            </NavLink>
+          )}
           <NavLink
             to="/my-ticket"
             className={({ isActive }) =>

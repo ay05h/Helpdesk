@@ -1,12 +1,57 @@
-# React + Vite
+# Helpdesk Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Helpdesk system, built with [React](https://react.dev/), [Vite](https://vitejs.dev/), [Redux Toolkit](https://redux-toolkit.js.org/), and [TailwindCSS](https://tailwindcss.com/).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (login, signup, forgot password)
+- Role-based dashboards (User, Tech Team, Operation Team)
+- Ticket creation and listing
+- Responsive UI with TailwindCSS
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+client/
+├── public/           # Static assets
+├── src/
+│   ├── assets/       # Images and SVGs
+│   ├── components/   # Reusable React components
+│   ├── pages/        # Page components (dashboard, tickets, auth, etc.)
+│   ├── store/        # Redux slices and store
+│   └── App.jsx       # Main app entry
+├── connections/      # API connection logic (axios)
+├── index.html
+├── vite.config.js
+└── ...
+```
+
+## Environment Variables
+
+Create a `.env` file in the `client/` directory:
+
+```
+VITE_BACKEND_URL=http://localhost:5000
+```
+
+## Scripts
+
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+- `npm run preview` – Preview production build
+- `npm run lint` – Lint code
+
+## Usage
+
+1. Start the backend server (see [../server/README.md](../server/README.md)).
+2. Run the frontend:
+   ```sh
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Demo User Credentials
+
+See [../README.md](../README.md) for test user credentials.
+
+---
