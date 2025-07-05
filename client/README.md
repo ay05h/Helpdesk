@@ -4,7 +4,7 @@ This is the frontend for the Helpdesk system, built with [React](https://react.d
 
 ## Features
 
-- User authentication (login, signup, forgot password)
+- User authentication frontend(login, signup, forgot password)
 - Role-based dashboards (User, Tech Team, Operation Team)
 - Ticket creation and listing
 - Responsive UI with TailwindCSS
